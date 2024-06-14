@@ -1,0 +1,235 @@
+:root {
+  --background-color: rgb(17, 16, 20);
+  --text-color: white;
+
+  --J1-color: #4caf50;
+  --J2-color: #ff5722;
+  --padding: 10px;
+
+  background-color: var(--background-color);
+}
+.app {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.home-container {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.home-container > h1{
+  font-size: 32px;
+
+  border-bottom: 2px solid white;
+  text-shadow: 0px 0px 15px gold;
+}
+.home-container > button{ 
+  margin: 10px;
+  padding: 12px 20px;
+
+  font-size: 15px;
+
+  border-radius: 5px;
+  color: black;
+  border: none;
+  background-color: goldenrod;
+}
+.home-container > button:hover{ 
+  box-shadow: 0px 0px 10px 2px green;
+}
+/* JUEGO ALINEA 4 -----------------------------------------------*/
+.alinea4-container,
+.tateti-container{
+  margin: 0px;
+  padding: 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* titulo --------*/
+.alinea4-container > h2,
+.tateti-container > h2 {
+  margin: 10px 0 0 0;
+  padding: 10px;
+
+  font-size: 30px;
+  text-shadow: 0px 0px 15px gold;
+}
+
+/* botones --------*/
+.alinea4-container > .botones,
+.tateti-container > .botones {
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid white;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.alinea4-container > .botones > button,
+.tateti-container > .botones > button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+
+  font-size: 15px;
+
+  background-color: rgb(0, 0, 0);
+  color: goldenrod;
+  border: 1px solid goldenrod;
+}
+.alinea4-container > .botones > button:hover,
+.tateti-container > .botones > button:hover{ 
+  box-shadow: 0px 0px 10px 2px green;
+}
+/* ganador --------*/
+.alinea4-container > .ganador,
+.tateti-container > .ganador {
+  margin: 10px 0 0 0;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.alinea4-container > .ganador > .G1,
+.tateti-container > .ganador > .G1 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid goldenrod;
+  background-color: RED;
+}
+.alinea4-container > .ganador > .G2,
+.tateti-container > .ganador > .G2 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid goldenrod;
+  background-color: blue;
+}
+.tateti-container > .ganador > .EMP {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid goldenrod;
+  background-color: green;
+}
+
+/* turnos --------*/
+.alinea4-container > .turnos,
+.tateti-container > .turnos {
+  margin: 10px 0 0 0;
+  padding: 10px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.alinea4-container > .turnos > .title,
+.tateti-container > .turnos > .title {
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.alinea4-container > .turnos > .J1,
+.tateti-container > .turnos > .J1 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: RED;
+}
+.alinea4-container > .turnos > .J2,
+.tateti-container > .turnos > .J2 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: blue;
+}
+
+/* tablero --------*/
+.alinea4-container > .tablero {
+  margin: 0px;
+  padding: 0;
+  width: 570px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+.alinea4-container > .tablero > .celda {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 100%;
+  background-color: grey;
+
+  font-size: 30px;
+}
+.alinea4-container > .tablero > .celda:hover{ 
+  box-shadow: 0px 0px 5px 1px green;
+}
+.alinea4-container > .tablero > .rojo {
+  background-color: red;
+}
+
+.alinea4-container > .tablero > .azul {
+  background-color: blue;
+}
+
+/* JUEGO TATETI -----------------------------------------------*/
+.tateti-container > .tablero{
+  margin: 0px;
+  padding: 0;
+  width: 260px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.tateti-container > .tablero > .celda {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 100%;
+  background-color: grey;
+  
+  font-size: 30px;
+}
+.tateti-container > .tablero > .celda:hover{ 
+  box-shadow: 0px 0px 5px 1px green;
+}
+.tateti-container > .tablero > .rojo {
+  background-color: red;
+}
+
+.tateti-container > .tablero > .azul {
+  background-color: blue;
+}
