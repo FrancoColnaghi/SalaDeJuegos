@@ -7,7 +7,13 @@
   --padding: 10px;
 
   background-color: var(--background-color);
+
+  font-family: "Poppins";
 }
+button{
+  font-family: "Poppins";
+}
+
 .app {
   margin: 0;
   padding: 0;
@@ -53,7 +59,8 @@
 }
 /* JUEGO ALINEA 4 -----------------------------------------------*/
 .alinea4-container,
-.tateti-container{
+.tateti-container,
+.generala-container{
   margin: 0px;
   padding: 0px;
 
@@ -65,9 +72,10 @@
 
 /* titulo --------*/
 .alinea4-container > h2,
-.tateti-container > h2 {
-  margin: 10px 0 0 0;
-  padding: 10px;
+.tateti-container > h2,
+.generala-container > h2 {
+  margin: 6px 0 0 0;
+  padding: 8px;
 
   font-size: 30px;
   text-shadow: 0px 0px 15px gold;
@@ -75,6 +83,7 @@
 
 /* botones --------*/
 .alinea4-container > .botones,
+.generala-container > .botones,
 .tateti-container > .botones {
   margin: 0px;
   padding: 0px;
@@ -87,9 +96,10 @@
 }
 
 .alinea4-container > .botones > button,
+.generala-container > .botones > button,
 .tateti-container > .botones > button {
-  margin: 10px;
-  padding: 10px;
+  margin: 8px;
+  padding: 8px;
   border-radius: 5px;
 
   font-size: 15px;
@@ -99,6 +109,7 @@
   border: 1px solid goldenrod;
 }
 .alinea4-container > .botones > button:hover,
+.generala-container > .botones > button:hover,
 .tateti-container > .botones > button:hover{ 
   box-shadow: 0px 0px 10px 2px green;
 }
@@ -233,3 +244,153 @@
 .tateti-container > .tablero > .azul {
   background-color: blue;
 }
+
+/* JUEGO GENERALA -----------------------------------------------*/
+.generala-container .dados-container{
+  margin: 10px 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* panel FIJADOS */
+.generala-container > .dados-container > .fijados{
+  width: 350px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.generala-container > .dados-container > .fijados > .title{
+  font-size: 20px;
+  margin: 0;
+  padding: 10px;
+}
+.generala-container > .dados-container > .fijados > .serie-dados{
+  width: 250px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.generala-container > .dados-container > .fijados > .serie-dados > div{
+  margin: 5px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 5px;
+  color: black;
+  background-color: white;
+}
+/* panel A TIRAR */
+.generala-container > .dados-container > .atirar{
+  width: 350px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.generala-container > .dados-container > .atirar > .title{
+  margin: 0;
+  padding: 5px 10px;
+
+  font-size: 20px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  background-color: var(--background-color);
+}
+.generala-container > .dados-container > .atirar > .title:hover{
+  text-shadow: 0px 0px 15px green;
+}
+.generala-container > .dados-container > .atirar > .serie-dados{
+  width: 250px;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.generala-container > .dados-container > .atirar > .serie-dados > button{
+  margin: 5px;
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+}
+.generala-container > .dados-container > .atirar > .serie-dados > button:hover{
+  box-shadow: 0px 0px 5px 1px green;
+}
+
+/* boton siguiente ronda */
+.generala-container > .dados-container > .siguiente-ronda,
+.generala-container > .dados-container > .fijar {
+  margin: 5px 0 0 0;
+  padding: 8px;
+  border-radius: 5px;
+
+  font-size: 15px;
+
+  background-color: rgb(0, 0, 0);
+  color: goldenrod;
+  border: 1px solid goldenrod;
+}
+/* Tablero */
+.generala-container > .tablero {
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.generala-container > .tablero > .titulos,
+.generala-container > .tablero > .total {
+  font-size: 22px;
+  font-weight: 600;
+}
+.generala-container > .tablero > li {
+  width: 250px;
+  margin: 0px;
+  padding: 2px 8px;
+  border-radius: 5px;
+  border: 1px solid grey;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.generala-container > .tablero > .concretada {
+  background-color: green;
+  cursor: default;
+}
+.generala-container > .tablero > .linea:hover {
+  box-shadow: 0px 0px 5px 1px green;
+  cursor: default;
+}
+.generala-container > .tablero > .concretada:hover {
+  box-shadow: none;
+}
+
+

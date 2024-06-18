@@ -14,7 +14,7 @@ export const controlarGanador = (arr) => {
           hay_ganador = 1;
         }
     });
-    if ( !arr.includes(null) ) {
+    if ( !arr.includes(null) && hay_ganador == 0 ) {
       hay_ganador = 2;
     }
     return hay_ganador;
