@@ -1,63 +1,187 @@
 :root {
-  --background-color: rgb(17, 16, 20);
-  --text-color: white;
+  --color-fondo: rgb(17, 16, 20);
+  --color-detalles: goldenrod;
+  --color-texto: white;
+  --color-texto-boton: black;
+  --color-focus: green;
+  --color-J1: #4caf50;
+  --color-J2: #ff5722;
+  font-size: clamp(4px, calc(100vw / 100), 10px);
 
-  --J1-color: #4caf50;
-  --J2-color: #ff5722;
-  --padding: 10px;
+  width: 100vw;
+  height: 100vh;
 
-  background-color: var(--background-color);
-
-  font-family: "Poppins";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-fondo);
 }
-button{
-  font-family: "Poppins";
+body{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-width: 320px;
+  max-width: 1200px;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-fondo);
 }
-
 .app {
   margin: 0;
   padding: 0;
   width: 100%;
   height: 100%;
+  font-family: "Poppins";
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
 }
+
+/* HOME CONTAINER (COMPONENTE)------------------- */
 .home-container {
   margin: 0;
-  padding: 0;
+  padding: 2rem 4rem;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  border-radius: 1rem;
+  border: 1px solid var(--color-detalles);
+  box-shadow: 0px 0px 5px 1px var(--color-detalles);
 }
 .home-container > h1{
-  font-size: 32px;
-
-  border-bottom: 2px solid white;
-  text-shadow: 0px 0px 15px gold;
+  font-size: calc(clamp(10px, 5.2rem, 30px) + 12px);
+  text-shadow: 0px 0px 15px var(--color-detalles);
 }
 .home-container > button{ 
-  margin: 10px;
-  padding: 12px 20px;
+  margin: calc(0.5rem + 6px);
+  padding: 1.2rem 2rem;
 
-  font-size: 15px;
+  font-size: clamp(14px, 2.2rem, 18px);
+  font-family: "Poppins";
 
   border-radius: 5px;
-  color: black;
+  color: var(--color-texto-boton);
   border: none;
-  background-color: goldenrod;
+  background-color: var(--color-detalles);
 }
 .home-container > button:hover{ 
+  box-shadow: 0px 0px 10px 2px var(--color-focus);
+}
+
+/* HEADER (COMPONENTE)-------------------------- */
+header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+header > h2{
+  margin: 6px 0 0 0;
+  padding: 8px;
+
+  font-size: 30px;
+  text-shadow: 0px 0px 15px gold;
+}
+header > .botones {
+  margin: 0px;
+  padding: 0px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header > .botones > button{
+  margin: 8px;
+  padding: 8px;
+  border-radius: 5px;
+
+  font-family: "Poppins";
+  font-size: 15px;
+
+  background-color: rgb(0, 0, 0);
+  color: goldenrod;
+  border: 1px solid goldenrod;
+}
+header > .botones > button:hover {
   box-shadow: 0px 0px 10px 2px green;
 }
-/* JUEGO ALINEA 4 -----------------------------------------------*/
+/* TURNOS (COMPONENTE)-------------------------- */
+.turnos{
+  margin: 10px 0;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  font-size: calc(15px);
+}
+.turnos > .title {
+  font-family: "Poppins";
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+.turnos > .J1 {
+  padding: 6px 12px;
+  font-family: "Poppins";
+  border-radius: 5px;
+  color: white;
+  background-color: RED;
+}
+.turnos > .J2 {
+  padding: 10px 20px;
+  font-family: "Poppins";
+  border-radius: 5px;
+  color: white;
+  background-color: blue;
+}
+/* GANADOR (COMPONENTE)------------------------- */
+.ganador {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.ganador > .G1 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid goldenrod;
+  background-color: RED;
+}
+.ganador > .G2 {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid goldenrod;
+  background-color: blue;
+}
+.ganador > .EMP {
+  padding: 10px 20px;
+  border-radius: 5px;
+  color: white;
+  border: 2px solid goldenrod;
+  background-color: green;
+}
+
+/* JUEGO ALINEA 4 -------------------*/
 .alinea4-container,
 .tateti-container,
 .generala-container{
@@ -70,132 +194,20 @@ button{
   align-items: center;
 }
 
-/* titulo --------*/
-.alinea4-container > h2,
-.tateti-container > h2,
-.generala-container > h2 {
-  margin: 6px 0 0 0;
-  padding: 8px;
-
-  font-size: 30px;
-  text-shadow: 0px 0px 15px gold;
-}
-
-/* botones --------*/
-.alinea4-container > .botones,
-.generala-container > .botones,
-.tateti-container > .botones {
-  margin: 0px;
-  padding: 0px;
-  border-bottom: 1px solid white;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.alinea4-container > .botones > button,
-.generala-container > .botones > button,
-.tateti-container > .botones > button {
-  margin: 8px;
-  padding: 8px;
-  border-radius: 5px;
-
-  font-size: 15px;
-
-  background-color: rgb(0, 0, 0);
-  color: goldenrod;
-  border: 1px solid goldenrod;
-}
-.alinea4-container > .botones > button:hover,
-.generala-container > .botones > button:hover,
-.tateti-container > .botones > button:hover{ 
-  box-shadow: 0px 0px 10px 2px green;
-}
-/* ganador --------*/
-.alinea4-container > .ganador,
-.tateti-container > .ganador {
-  margin: 10px 0 0 0;
-  padding: 10px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-.alinea4-container > .ganador > .G1,
-.tateti-container > .ganador > .G1 {
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  border: 2px solid goldenrod;
-  background-color: RED;
-}
-.alinea4-container > .ganador > .G2,
-.tateti-container > .ganador > .G2 {
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  border: 2px solid goldenrod;
-  background-color: blue;
-}
-.tateti-container > .ganador > .EMP {
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  border: 2px solid goldenrod;
-  background-color: green;
-}
-
-/* turnos --------*/
-.alinea4-container > .turnos,
-.tateti-container > .turnos {
-  margin: 10px 0 0 0;
-  padding: 10px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-}
-.alinea4-container > .turnos > .title,
-.tateti-container > .turnos > .title {
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-.alinea4-container > .turnos > .J1,
-.tateti-container > .turnos > .J1 {
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  background-color: RED;
-}
-.alinea4-container > .turnos > .J2,
-.tateti-container > .turnos > .J2 {
-  padding: 10px 20px;
-  border-radius: 5px;
-  color: white;
-  background-color: blue;
-}
-
 /* tablero --------*/
 .alinea4-container > .tablero {
   margin: 0px;
   padding: 0;
-  width: 570px;
-
+  width: calc(52rem + 90px);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  gap: 10px;
+  gap: calc(1rem + 4px);
 }
 .alinea4-container > .tablero > .celda {
-  width: 50px;
-  height: 50px;
-  margin: 10px;
-  padding: 10px;
+  width: calc(6rem + 5px);
+  height: calc(6rem + 5px);
+  margin: 0.5rem;
+  padding: 1rem;
   border: none;
   border-radius: 100%;
   background-color: grey;
@@ -299,7 +311,7 @@ button{
   width: 350px;
   margin: 0;
   padding: 0;
-
+  font-size: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -340,7 +352,9 @@ button{
 .generala-container > .dados-container > .atirar > .serie-dados > button:hover{
   box-shadow: 0px 0px 5px 1px green;
 }
-
+.generala-container > div {
+  font-size: 16px;
+}
 /* boton siguiente ronda */
 .generala-container > .dados-container > .siguiente-ronda,
 .generala-container > .dados-container > .fijar {
@@ -358,7 +372,7 @@ button{
 .generala-container > .tablero {
   margin: 0;
   padding: 0;
-
+  font-size: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -370,6 +384,7 @@ button{
   font-weight: 600;
 }
 .generala-container > .tablero > li {
+  font-size: 15px;
   width: 250px;
   margin: 0px;
   padding: 2px 8px;

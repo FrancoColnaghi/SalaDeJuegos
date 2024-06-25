@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import "../../app.css";
 import { Celda } from "./Celda";
 import { controlarGanador } from "./ganador.js";
+import { Header } from "../Header.jsx";
+import { Turnos } from "../Turnos.jsx";
+import { Ganador } from "../Ganador.jsx";
 
 export const Alinea4 = ({ setAlinea4Comenzado }) => {
   // Estado de Turno de jugador ( valores 1 o 2)
@@ -94,28 +97,13 @@ export const Alinea4 = ({ setAlinea4Comenzado }) => {
 
   return (
     <div className="alinea4-container">
-      <h2>ALINEA-4</h2>
-      <div className="botones">
-        <button onClick={volverInicio}>Volver a Inicio</button>
-        <button onClick={reiniciarJuego}>Reiniciar Juego</button>
-      </div>
+      <Header reiniciarJuego={reiniciarJuego}
+              volverInicio={volverInicio}
+              nombreJuego={"Alinea4"}/>
       {ganador ? (
-        <div className="ganador">
-          {ganador == 1 ? (
-            <div className="G1">- Gana Jugador Rojo -</div>
-          ) : (
-            <div className="G2">- Gana jugador Azul -</div>
-          )}
-        </div>
+        <Ganador ganador={ganador}/>
       ) : (
-        <div className="turnos">
-          <div className="title">TURNO:</div>
-          {turno == 1 ? (
-            <div className="J1">Jugador Rojo</div>
-          ) : (
-            <div className="J2">Jugador Azul</div>
-          )}
-        </div>
+        <Turnos turno={turno}/>
       )}
       <div className="tablero">
         {tablero.map((contenido, index) => {

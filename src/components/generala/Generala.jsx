@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Tablero } from "./Tablero";
-import { Header } from "./Header";
+import { Header } from "../Header";
 
 export const Generala = ({ setGeneralaComenzado }) => {
   const [dados, setDados] = useState([]);
@@ -117,7 +117,9 @@ export const Generala = ({ setGeneralaComenzado }) => {
 
   return (
     <div className="generala-container">
-      <Header volverInicio={volverInicio} reiniciarJuego={reiniciarJuego}/>
+      <Header reiniciarJuego={reiniciarJuego}
+              volverInicio={volverInicio}
+              nombreJuego={"Generala"}/>
       <div className="dados-container">
       {ronda == 11 ? (<>
         <div>- JUEGO FINALIZADO -</div>

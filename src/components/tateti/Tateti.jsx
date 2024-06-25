@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Celda } from './Celda';
 import { controlarGanador } from "./ganador.js";
+import { Header } from '../Header.jsx';
+import { Turnos } from '../Turnos.jsx';
+import { Ganador } from '../Ganador.jsx';
 
 export const Tateti = ({setTatetiComenzado}) => {
   // Estado de Turno de jugador ( valores 1 o 2)
@@ -65,30 +68,13 @@ export const Tateti = ({setTatetiComenzado}) => {
 
   return (
     <div className='tateti-container'>
-      <h2>TaTeTi</h2>
-      <div className="botones">
-        <button onClick={volverInicio}>Volver a Inicio</button>
-        <button onClick={reiniciarJuego}>Reiniciar Juego</button>
-      </div>
+      <Header reiniciarJuego={reiniciarJuego}
+              volverInicio={volverInicio}
+              nombreJuego={"TaTeTi"}/>
       {ganador ? (
-        <div className="ganador">
-          {ganador == 1 ? (
-            <div className="G1">- Gana Jugador Rojo -</div>
-          ) : ganador == 2 ? (
-              <div className="G2">- Gana jugador Azul -</div>
-          ) : ganador == 3 ? (
-              <div className="EMP">- EMPATE -</div>
-          ): null}
-        </div>
+        <Ganador ganador={ganador}/>
       ) : (
-        <div className="turnos">
-          <div className="title">TURNO:</div>
-          {turno == 1 ? (
-            <div className="J1">Jugador Rojo</div>
-          ) : (
-            <div className="J2">Jugador Azul</div>
-          )}
-        </div>
+        <Turnos turno={turno}/>
       )}
       <div className="tablero">
         {tablero.map((contenido, index) => {
