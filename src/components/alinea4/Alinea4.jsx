@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../app.css";
+import "../../App.css";
 import { Celda } from "./Celda";
 import { controlarGanador } from "./ganador.js";
 import { Header } from "../Header.jsx";
